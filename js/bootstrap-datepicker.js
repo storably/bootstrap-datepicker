@@ -205,8 +205,9 @@
                           	return $(this).css('z-index') != 'auto';
                         }).first().css('z-index'))+10;		
 			var offset = this.component ? this.component.offset() : this.element.offset();
+			var offheight = this.component ? this.element.find('input').height() : this.element.height();
 			this.picker.css({
-				top: offset.top + this.height,
+				top: offset.top + this.height + offheight,
 				left: offset.left,
 				zIndex: zIndex
 			});
